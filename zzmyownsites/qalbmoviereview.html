@@ -86,6 +86,31 @@
             font-size: 30px;
             color: red;
         }
+
+
+        #linkdiv {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #linkbtn {
+            display: none;
+            height: 35px;
+            width: 150px;
+            background-color: blue;
+            border: none;
+            color: white;
+            border-radius: 25px;
+        }
+
+        #waittext {
+            width: 90%;
+            display: flex;
+            color: red;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 
@@ -190,18 +215,23 @@
     <p>So, if you’re looking for a movie that will touch your heart and stay with you long after the credits roll, look
         no further than Qalb. It’s a cinematic journey that’s well worth taking.</p>
 
+    <div id="linkdiv"><a href="https://t.me/coolsavings/83"><button id="linkbtn">Movie Link</button></a></div>
+    <h2 id="waittext">Link Ready in... <span id="wts">30</span></h2>
+
 </body>
 
 <!--Counter-->
 <script>
-    let countdown = 3;
+    let countdown = 30;
     const progressCircle = document.getElementById("progressCircle");
     const countText = document.getElementById("countText");
     const loadtext = document.getElementById('loadtext');
-    const linkbtn = document.getElementById('linkbtn')
+    const linkbtn = document.getElementById('linkbtn');
+    const waittextspan = document.getElementById('wts');
+    const waittext = document.getElementById('waittext');
 
     function updateProgress() {
-        let angle = (countdown / 3) * 360;
+        let angle = (countdown / 30) * 360;
         progressCircle.style.transition = "background 1s linear";
         progressCircle.style.background = `conic-gradient(lime ${angle}deg, gray ${angle}deg)`;
     }
@@ -210,6 +240,7 @@
     const interval = setInterval(() => {
         countdown--;
         countText.textContent = countdown;
+        waittextspan.textContent = countdown
         updateProgress();
 
         if (countdown <= 0) {
@@ -219,6 +250,7 @@
             loadtext.classList.add("loadafter");
             loadtext.innerText = "Scroll Down for link"
             linkbtn.style.display = "block"
+            waittext.style.display = 'none';
         }
     }, 1000);
 </script>
