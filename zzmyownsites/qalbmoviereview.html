@@ -14,105 +14,212 @@
     <title>Qalb Movie Review</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Archivo", serif;
-        }
+        @media only screen and (max-width: 600px) {
 
-        body {
-            background-color: #212327;
-            color: white;
-            display: flex;
-            flex-direction: column;
+            /* Styles for mobile devices */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Archivo", serif;
+            }
 
-            h1,
-            h2 {
-                margin-left: 5%;
-                align-self: start;
+            body {
+                background-color: #212327;
+                color: white;
+                display: flex;
+                flex-direction: column;
+
+                h1,
+                h2 {
+                    margin-left: 5%;
+                    align-self: start;
+                }
+            }
+
+            p {
+                margin: 0 5% 0 5%;
+                width: 90%;
+                color: #ccc;
+            }
+
+            .container {
+                position: relative;
+                width: 150px;
+                height: 150px;
+                display: flex;
+                justify-self: center;
+            }
+
+            .progress-circle {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: conic-gradient(white 360deg,
+                        gray 360deg);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 1s ease;
+            }
+
+            .count {
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                background-color: #212327;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 48px;
+                font-weight: bold;
+                color: red;
+            }
+
+            #loadtext {
+                text-align: center;
+            }
+
+            .loadtext {
+                font-size: 20px;
+                color: white;
+            }
+
+            .loadafter {
+                font-size: 30px;
+                color: red;
+            }
+
+            #linkdiv {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            #linkbtn {
+                display: none;
+                height: 35px;
+                width: 150px;
+                background-color: blue;
+                border: none;
+                color: white;
+                border-radius: 25px;
+            }
+
+            #waittext {
+                width: 90%;
+                display: flex;
+                color: red;
+                align-items: center;
+                justify-content: center;
             }
         }
 
-        p {
-            margin: 0 5% 0 5%;
-            width: 90%;
-            color: #ccc;
-        }
+        @media only screen and (min-width: 601px) {
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Archivo", serif;
+            }
 
-        .container {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            display: flex;
-            justify-self: center;
-        }
+            body {
+                background-color: #212327;
+                color: white;
+                display: flex;
+                flex-direction: column;
 
-        .progress-circle {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: conic-gradient(white 360deg,
-                    gray 360deg);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 1s ease;
-        }
+                h1,
+                h2 {
+                    margin-left: 5%;
+                    align-self: start;
+                }
+            }
 
-        .count {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background-color: #212327;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 48px;
-            font-weight: bold;
-            color: red;
-        }
+            p {
+                margin: 0 5% 0 5%;
+                width: 90%;
+                color: #ccc;
+            }
 
-        #loadtext {
-            text-align: center;
-        }
+            .container {
+                position: relative;
+                width: 150px;
+                height: 150px;
+                display: flex;
+                justify-self: center;
+            }
 
-        .loadtext {
-            font-size: 20px;
-            color: white;
-        }
+            .progress-circle {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: conic-gradient(white 360deg,
+                        gray 360deg);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 1s ease;
+            }
 
-        .loadafter {
-            font-size: 30px;
-            color: red;
-        }
+            .count {
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                background-color: #212327;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 48px;
+                font-weight: bold;
+                color: red;
+            }
 
-        #linkdiv {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
+            #loadtext {
+                text-align: center;
+            }
 
-        #linkbtn {
-            display: none;
-            height: 35px;
-            width: 150px;
-            background-color: blue;
-            border: none;
-            color: white;
-            border-radius: 25px;
-        }
+            .loadtext {
+                font-size: 20px;
+                color: white;
+            }
 
-        #waittext {
-            width: 90%;
-            display: flex;
-            color: red;
-            align-items: center;
-            justify-content: center;
+            .loadafter {
+                font-size: 30px;
+                color: red;
+            }
+
+            #linkdiv {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            #linkbtn {
+                display: none;
+                height: 35px;
+                width: 150px;
+                background-color: blue;
+                border: none;
+                color: white;
+                border-radius: 25px;
+            }
+
+            #waittext {
+                width: 90%;
+                display: flex;
+                color: red;
+                align-items: center;
+                justify-content: center;
+            }
         }
     </style>
 </head>
