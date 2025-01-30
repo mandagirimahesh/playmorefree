@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jio Free Recharge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #e60000;
+            font-size: 2.5rem;
+        }
+
+        input,
+        select,
+        button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: green;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #009a00;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .progress {
+            width: 0%;
+            height: 20px;
+            background-color: green;
+            border-radius: 5px;
+            transition: width 0.5s;
+        }
+
+        .content {
+            text-align: left;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .content h2 {
+            color: #e60000;
+            font-size: 1.8rem;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+        }
+
+        .plan-details {
+            display: none;
+            text-align: left;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .scroll-text {
+            margin: 20px 0;
+            font-size: 1.2rem;
+            color: #e60000;
+        }
+
+        #shareButton {
+            max-width: 400px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Jio Free Recharge</h1>
+        <input type="text" id="jioNumber" placeholder="Enter Jio Number" maxlength="10">
+        <select id="plan" onchange="showPlanDetails()">
+            <option value="">Select Recharge</option>
+            <option value="149">₹149 Plan</option>
+            <option value="399">₹399 Plan</option>
+            <option value="799">₹799 Plan</option>
+            <option value="999">₹999 Plan</option>
+        </select>
+
+        <!-- Plan Details -->
+        <div id="planDetails" class="plan-details">
+            <h2 id="planName"></h2>
+            <p id="planDescription"></p>
+        </div>
+
+
+        <div>
+            <!--Square Ad-->
+            <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+                crossorigin="anonymous"></script>
+            <!-- display square -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2648616140569696"
+                data-ad-slot="7002523082" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!--Square Ad-->
+        </div>
+
+        <!-- Recharge Now Button -->
+        <button onclick="startRecharge()" id="rechargeButton">Recharge Now</button>
+        <div>
+            <!--Square Ad-->
+            <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+                crossorigin="anonymous"></script>
+            <!-- display square -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2648616140569696"
+                data-ad-slot="7002523082" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!--Square Ad-->
+        </div>
+
+
+
+        <!-- Scroll Down Text -->
+        <div id="scrollText" class="scroll-text" style="display: none;">Scroll down for recharge</div>
+
+        <!-- About Jio Section -->
+        <div class="content">
+            <h2>About Jio</h2>
+            <p>
+                Jio, a subsidiary of Reliance Industries, has revolutionized the telecom industry in India since its
+                launch in 2016. With its affordable data plans and widespread network coverage, Jio has brought millions
+                of Indians online, bridging the digital divide. Jio's mission is to provide high-speed internet and
+                digital services to every corner of the country, empowering individuals and businesses alike.
+            </p>
+            <div>
+                <!--Square Ad-->
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+                    crossorigin="anonymous"></script>
+                <!-- display square -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2648616140569696"
+                    data-ad-slot="7002523082" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!--Square Ad-->
+            </div>
+            <p>
+                Jio's entry into the market disrupted the telecom sector, forcing competitors to lower their prices and
+                improve services. Today, Jio is not just a telecom provider but a digital ecosystem offering a range of
+                services, including JioTV, JioCinema, JioSaavn, and JioMart. Its 4G network is one of the largest in the
+                world, covering over 99% of India's population.
+            </p>
+            <div>
+                <!--Square Ad-->
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+                    crossorigin="anonymous"></script>
+                <!-- display square -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2648616140569696"
+                    data-ad-slot="7002523082" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!--Square Ad-->
+            </div>
+            <p>
+                One of Jio's key achievements is its focus on affordability. With plans starting as low as ₹149, Jio has
+                made mobile data accessible to even the most economically disadvantaged sections of society. This has
+                led to a surge in internet usage, with India now having one of the largest online populations globally.
+            </p>
+            <div>
+                <!--Square Ad-->
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+                    crossorigin="anonymous"></script>
+                <!-- display square -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2648616140569696"
+                    data-ad-slot="7002523082" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!--Square Ad-->
+            </div>
+            <p>
+                Jio's impact extends beyond telecom. It has played a pivotal role in the growth of India's digital
+                economy, enabling e-commerce, digital payments, and online education. The JioPhone, an affordable
+                4G-enabled smartphone, has further accelerated digital adoption in rural areas.
+            </p>
+            <div>
+                <!--Square Ad-->
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+                    crossorigin="anonymous"></script>
+                <!-- display square -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2648616140569696"
+                    data-ad-slot="7002523082" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!--Square Ad-->
+            </div>
+            <p>
+                Looking ahead, Jio is poised to lead India's transition to 5G. With its extensive infrastructure and
+                technological expertise, Jio is well-positioned to deliver next-generation connectivity and services.
+                The company's vision is to create a fully connected, digitally empowered India.
+            </p>
+            <div>
+                <!--Square Ad-->
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+                    crossorigin="anonymous"></script>
+                <!-- display square -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2648616140569696"
+                    data-ad-slot="7002523082" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!--Square Ad-->
+            </div>
+            <p>
+                In conclusion, Jio has transformed the way India communicates and consumes digital content. Its
+                innovative approach and customer-centric policies have made it a household name. As Jio continues to
+                expand its offerings, it remains committed to its mission of connecting every Indian to the digital
+                world.
+            </p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div>
+            <!--Square Ad-->
+            <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+                crossorigin="anonymous"></script>
+            <!-- display square -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2648616140569696"
+                data-ad-slot="7002523082" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!--Square Ad-->
+        </div>
+        <!-- WhatsApp Share Button -->
+        <button onclick="shareToWhatsApp()" id="shareButton">Share to 5 Members for Free Recharge</button>
+        <div>
+            <!--Square Ad-->
+            <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+                crossorigin="anonymous"></script>
+            <!-- display square -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2648616140569696"
+                data-ad-slot="7002523082" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!--Square Ad-->
+        </div>
+    </div>
+
+    <script>
+        let shares = 0;
+
+        // Function to show plan details
+        function showPlanDetails() {
+            const planSelect = document.getElementById('plan');
+            const planDetails = document.getElementById('planDetails');
+            const scrollText = document.getElementById('scrollText');
+            const planName = document.getElementById('planName');
+            const planDescription = document.getElementById('planDescription');
+
+            if (planSelect.value) {
+                const plans = {
+                    "149": { name: "₹149 Plan", description: "1.5GB/day, unlimited calls, validity 28 days." },
+                    "399": { name: "₹399 Plan", description: "2GB/day, unlimited calls, validity 56 days." },
+                    "799": { name: "₹799 Plan", description: "3GB/day, unlimited calls, validity 84 days." },
+                    "999": { name: "₹999 Plan", description: "5GB/day, unlimited calls, validity 90 days." }
+                };
+
+                const selectedPlan = plans[planSelect.value];
+                planName.textContent = selectedPlan.name;
+                planDescription.textContent = selectedPlan.description;
+                planDetails.style.display = 'block';
+                scrollText.style.display = 'block';
+            } else {
+                planDetails.style.display = 'none';
+                scrollText.style.display = 'none';
+            }
+        }
+
+        // Function to start recharge
+        function startRecharge() {
+            const jioNumber = document.getElementById('jioNumber').value;
+            const plan = document.getElementById('plan').value;
+
+            if (jioNumber.length !== 10 || isNaN(jioNumber)) {
+                alert('Please enter a valid Jio number.');
+                return;
+            }
+
+            if (!plan) {
+                alert('Please select a recharge plan.');
+                return;
+            }
+
+            alert(`Recharge started for ${jioNumber} with plan ₹${plan}.`);
+            document.getElementById('rechargeButton').style.display = 'none'; // Hide Recharge Now button
+            document.getElementById('shareButton').style.display = 'block'; // Show Share button
+        }
+
+        // Function to share on WhatsApp
+        function shareToWhatsApp() {
+            const referralLink = 'https://your-referral-link.com'; // Replace with your referral link
+            const message = `Hey! Recharge your Jio number and get free benefits. Click here: ${referralLink}`;
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+
+            window.open(whatsappUrl, '_blank');
+
+            shares++;
+            updateProgressBar(shares);
+
+            if (shares === 5) {
+                alert('Recharge successful!');
+                location.reload();
+            }
+        }
+
+        // Function to update progress bar
+        function updateProgressBar(shares) {
+            const progress = (shares / 5) * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+    </script>
+</body>
+
+</html>
