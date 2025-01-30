@@ -356,15 +356,15 @@
                 return;
             }
 
-            alert(`Recharge started for ${jioNumber} with plan ₹${plan}.`);
+            alert(`Share 5 Members for ${jioNumber} with plan ₹${plan}.`);
             document.getElementById('rechargeButton').style.display = 'none'; // Hide Recharge Now button
             document.getElementById('shareButton').style.display = 'block'; // Show Share button
         }
 
         // Function to share on WhatsApp
         function shareToWhatsApp() {
-            const referralLink = 'https://your-referral-link.com'; // Replace with your referral link
-            const message = `Hey! Recharge your Jio number and get free benefits. Click here: ${referralLink}`;
+            const referralLink = 'https://playmorefree.netlify.app/zzmyownsites/jio';
+            const message = `Hey! Free Recharge your Jio number Click here: ${referralLink}`;
             const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
 
             window.open(whatsappUrl, '_blank');
