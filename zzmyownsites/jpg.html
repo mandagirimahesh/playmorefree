@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPG to PNG Converter - Convert JPG Images to PNG Format Online</title>
+    <meta name="description"
+        content="Easily convert JPG images to PNG format online with our free JPG to PNG Converter tool. No software installation required.">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header,
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px 0;
+            text-align: right;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 20px;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Center the content horizontally */
+        }
+
+        #inputImage {
+            display: none;
+        }
+
+        #imagePreview {
+            max-width: 400px;
+            /* Set maximum width for image preview */
+            max-height: 400px;
+            /* Set maximum height for image preview */
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        label,
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        label:hover,
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #outputImage {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+        /* Styles for share buttons */
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .share-buttons a {
+            display: inline-block;
+            margin: 0 5px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .share-buttons a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>JPG to PNG Converter</h1>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#privacy-policy">Privacy Policy</a>
+    </nav>
+    <main>
+
+        <input type="file" id="inputImage" accept="image/jpeg" onchange="previewImage(event)">
+        <label for="inputImage">Select JPG Image</label>
+        <br>
+        <img id="imagePreview" alt="Image Preview">
+        <br>
+        <button id="convertButton" style="display: none;" onclick="convertToPng()">Convert to PNG</button>
+        <img id="outputImage" alt="Converted PNG Image">
+        <div>
+            <!--Square Ad-->
+            <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+                crossorigin="anonymous"></script>
+            <!-- display square -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2648616140569696"
+                data-ad-slot="7002523082" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!--Square Ad-->
+        </div>
+        <section id="about">
+            <h2>About</h2>
+            <p>Welcome to the JPG to PNG Converter tool! This web application allows you to easily convert JPG images to
+                PNG format. Simply select a JPG image file, and the tool will convert it to PNG format for you.</p>
+            <p>This tool is useful for various purposes, such as preparing images for websites, optimizing image
+                quality, or converting image formats for specific requirements.</p>
+            <p>Feel free to use this tool for your image conversion needs. If you have any feedback or suggestions,
+                please don't hesitate to contact us.</p>
+        </section>
+        <div>
+            <!--Square Ad-->
+            <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+                crossorigin="anonymous"></script>
+            <!-- display square -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2648616140569696"
+                data-ad-slot="7002523082" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!--Square Ad-->
+        </div>
+    </main>
+    <footer>
+        <div class="share-buttons">
+            <!-- Share buttons -->
+            <a href="#" onclick="shareOnFacebook()">Facebook</a>
+            <a href="#" onclick="shareOnTwitter()">Twitter</a>
+            <a href="#" onclick="shareOnLinkedIn()">LinkedIn</a>
+        </div>
+        &copy; 2024 - JPG to PNG Converter
+    </footer>
+    <script>
+        // JavaScript functions for sharing on social media platforms
+        function shareOnFacebook() {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), 'Share on Facebook', 'width=600,height=400');
+        }
+
+        function shareOnTwitter() {
+            window.open('https://twitter.com/share?url=' + encodeURIComponent(window.location.href), 'Share on Twitter', 'width=600,height=400');
+        }
+
+        function shareOnLinkedIn() {
+            window.open('https://www.linkedin.com/shareArticle?url=' + encodeURIComponent(window.location.href), 'Share on LinkedIn', 'width=600,height=400');
+        }
+
+        // JavaScript functions for image conversion (preview and conversion)
+        function previewImage(event) {
+            const inputImage = event.target.files[0];
+            if (!inputImage) {
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const imagePreview = document.getElementById('imagePreview');
+                imagePreview.src = event.target.result;
+                imagePreview.style.display = 'block';
+
+                // Show the "Convert to PNG" button
+                const convertButton = document.getElementById('convertButton');
+                convertButton.style.display = 'inline-block';
+            };
+            reader.readAsDataURL(inputImage);
+        }
+
+        function convertToPng() {
+            const inputImage = document.getElementById('inputImage').files[0];
+            if (!inputImage) {
+                alert('Please select a JPG image file.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const img = new Image();
+                img.onload = function () {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+                    const pngDataUrl = canvas.toDataURL('image/png');
+                    const outputImage = document.getElementById('outputImage');
+                    outputImage.src = pngDataUrl;
+                    outputImage.style.display = 'block';
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = pngDataUrl;
+                    downloadLink.download = 'converted_image.png';
+                    downloadLink.click();
+                };
+                img.src = event.target.result;
+            };
+            reader.readAsDataURL(inputImage);
+        }
+    </script>
+</body>
+
+</html>
