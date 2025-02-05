@@ -158,7 +158,7 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            var countdown = 5;
+            var countdown = 30;
             var timerElement = document.getElementById("timer");
             timerElement.innerHTML = "Wait for link..." + countdown + "s";
 
@@ -175,7 +175,7 @@
                     // Reveal the link text and auto-scroll to it
                     var linkText = document.getElementById("linkText");
                     linkText.classList.add("visible");
-                    linkText.scrollIntoView({ behavior: "smooth" });
+                    // linkText.scrollIntoView({ behavior: "smooth" });
                     // After an additional 30 seconds, reveal the blue button
                     setTimeout(function () {
                         document.getElementById("blueButton").classList.add("visible");
