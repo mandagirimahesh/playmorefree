@@ -126,10 +126,16 @@
         }
 
         /* Hidden elements for delayed display */
+        #linkText {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
         #linkText,
         #blueButton {
             opacity: 0;
-            transition: opacity 1s ease-in;
+            transition: opacity .5s ease-in;
         }
 
         #linkText.visible,
@@ -139,8 +145,6 @@
 
         #blueButton {
             display: block;
-            margin: 30px auto;
-            padding: 15px 30px;
             background: #0066cc;
             color: #fff;
             border: none;
@@ -154,13 +158,13 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            var countdown = 30;
+            var countdown = 5;
             var timerElement = document.getElementById("timer");
-            timerElement.innerHTML = "Time remaining: " + countdown + "s";
+            timerElement.innerHTML = "Wait for link..." + countdown + "s";
 
             var countdownInterval = setInterval(function () {
                 countdown--;
-                timerElement.innerHTML = "Time remaining: " + countdown + "s";
+                timerElement.innerHTML = "Wait for link..." + countdown + "s";
                 document.getElementById('wfl').innerHTML = 'Wait For Link!...' + countdown;
                 if (countdown <= 0) {
                     clearInterval(countdownInterval);
