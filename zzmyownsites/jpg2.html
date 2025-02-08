@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
-    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     <!-- Essential Meta Tags for SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Beautiful Image Converter - Easily upload, convert, and download images in multiple formats.">
-    <meta name="keywords" content="image converter, upload image, convert image, download image, PNG, JPEG, WEBP">
+        content="Responsive Image Converter - Easily upload, convert, and download images in multiple formats on any device.">
+    <meta name="keywords"
+        content="responsive image converter, upload image, convert image, download image, PNG, JPEG, WEBP">
     <meta name="author" content="Your Name or Company">
     <link rel="canonical" href="https://www.example.com">
 
-    <title>Beautiful Image Converter</title>
+    <title>Responsive Image Converter</title>
 
-    <!-- Internal CSS for styling -->
+    <!-- Internal CSS for styling and responsiveness -->
     <style>
         /* Reset and base styles */
         * {
@@ -129,20 +129,77 @@
         #canvas {
             display: none;
         }
+
+        /* Media Queries for Different Devices */
+
+        /* Mobile Devices (max-width: 600px) */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .upload-area {
+                padding: 20px;
+            }
+
+            select,
+            button {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* Tablets (min-width: 601px and max-width: 1024px) */
+        @media (min-width: 601px) and (max-width: 1024px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .container {
+                width: 80%;
+                padding: 25px;
+            }
+
+            select,
+            button {
+                padding: 12px;
+                font-size: 1em;
+            }
+        }
+
+        /* Desktops (min-width: 1025px) */
+        @media (min-width: 1025px) {
+            .container {
+                width: 800px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Beautiful Image Converter</h1>
+        <h1>Responsive Image Converter</h1>
         <p>Drag & drop your image or click to upload and convert it into multiple formats</p>
     </header>
-    <!--AMP Ads-->
-    <amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-2648616140569696" data-ad-slot="1393987074"
-        data-auto-format="rspv" data-full-width="">
-        <div overflow=""></div>
-    </amp-ad>
-    <!--AMP Ads-->
+
+    <!--In Article Ads-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+        crossorigin="anonymous"></script>
+    <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+        data-ad-format="fluid" data-ad-client="ca-pub-2648616140569696" data-ad-slot="9194679371"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <!--In Article Ads-->
 
     <div class="container">
         <!-- Custom upload area -->
@@ -150,12 +207,17 @@
             <p>Click here or drag & drop an image file</p>
             <input type="file" id="imageInput" accept="image/*">
         </div>
-        <!--AMP Ads-->
-        <amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-2648616140569696"
-            data-ad-slot="1393987074" data-auto-format="rspv" data-full-width="">
-            <div overflow=""></div>
-        </amp-ad>
-        <!--AMP Ads-->
+
+        <!--In Article Ads-->
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+            data-ad-format="fluid" data-ad-client="ca-pub-2648616140569696" data-ad-slot="9194679371"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <!--In Article Ads-->
 
         <!-- Format selection -->
         <select id="formatSelect">
@@ -163,12 +225,17 @@
             <option value="image/jpeg">JPEG</option>
             <option value="image/webp">WEBP</option>
         </select>
-        <!--AMP Ads-->
-        <amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-2648616140569696"
-            data-ad-slot="1393987074" data-auto-format="rspv" data-full-width="">
-            <div overflow=""></div>
-        </amp-ad>
-        <!--AMP Ads-->
+
+        <!--In Article Ads-->
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+            data-ad-format="fluid" data-ad-client="ca-pub-2648616140569696" data-ad-slot="9194679371"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <!--In Article Ads-->
 
         <!-- Convert button -->
         <button id="convertBtn">Convert Image</button>
@@ -194,7 +261,7 @@
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
 
-        // Clicking the upload area triggers the hidden file input
+        // Trigger file input when clicking the upload area
         uploadArea.addEventListener('click', () => {
             imageInput.click();
         });
