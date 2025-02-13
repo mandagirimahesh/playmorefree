@@ -25,18 +25,7 @@ async function main() {
         let heading = document.getElementById('heading')
         let image = document.getElementById('imagediv')
 
-        let updatedContent = artcle.body.replace(/\n\n/g, `<div id="ads"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
-     crossorigin="anonymous"></script>
-<!-- display square -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2648616140569696"
-     data-ad-slot="7002523082"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script></div>`);
+        let updatedContent = artcle.body.replace(/\n\n/g, `</p><p>`);
 
 
         heading.innerText = artcle.title
