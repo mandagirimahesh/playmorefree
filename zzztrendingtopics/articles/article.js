@@ -25,14 +25,27 @@ async function main() {
         let heading = document.getElementById('heading')
         let image = document.getElementById('imagediv')
 
-        let updatedContent = artcle.body.replace(/\n\n/g, `</p><p>`);
+        let adcode = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2648616140569696"
+        crossorigin="anonymous"></script>
+        <!-- display square -->
+        <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2648616140569696"
+        data-ad-slot="7002523082"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+        `
+
+        let updatedContent = artcle.body.replace(/\n\n/g, `</p>${adcode}<p>`);
 
 
         heading.innerText = artcle.title
         body.innerHTML = updatedContent
         title.innerText = artcle.title
         image.innerHTML = `<img id="image" src="${artcle.image}" alt="${artcle.label}">`
-
+        setTimeout(() => {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }, 500);
 
 
     } catch (error) {
