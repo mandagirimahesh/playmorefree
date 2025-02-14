@@ -36,7 +36,7 @@ async function main() {
         data-full-width-responsive="true"></ins>
         `
 
-        let updatedContent = artcle.body.replace(/\n\n/g, `</p>${adcode}<p>`);
+        let updatedContent = artcle.body.replace(/\n\n/g, `</p><br>${adcode}<p>`);
 
 
         heading.innerText = artcle.title
